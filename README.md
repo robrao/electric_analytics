@@ -1,0 +1,1 @@
+To help with giving a walkthrough on how angularJS directives work
