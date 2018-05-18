@@ -25,7 +25,10 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y \
     curl \
     wget \
-    vim
+    vim \
+    python \
+    g++ \
+    build-essential
 
 # Install node
 RUN cd /usr/local && \

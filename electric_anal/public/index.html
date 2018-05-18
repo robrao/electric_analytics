@@ -4,12 +4,14 @@
   <title>SECRET Identity Generator</title>
 
   <!-- external -->
-  <script src="//code.angularjs.org/1.3.0-rc.2/angular.min.js"></script>
-  <script src="//code.angularjs.org/1.3.0-rc.2/angular-route.min.js"></script>
-  <script src="//code.angularjs.org/1.3.0-rc.2/angular-resource.min.js"></script>
-        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+  <script src="node_modules/angular/angular.js"></script>
+  <script src="node_modules/angular-route/angular-route.min.js"></script>
+  <script src="node_modules/angular-resource/angular-resource.min.js"></script>
+  <script src="node_modules/chart.js/dist/Chart.js"></script>
+  <script src="node_modules/angular-chart.js/dist/angular-chart.js"></script>
+  <link rel="stylesheet" type="text/css" href="assets/static/css/bootstrap.min.css" />
   <!-- custom -->
-  <script src="/assets/app.js"></script>
+  <script src="assets/cont-app.js"></script>
 
 </head>
 <body>
@@ -28,7 +30,16 @@
   </nav>
 </header>
 
-<div class="container" ng-view></div>
+<div class="container">
+  <div class="col-lg-6 col-sm-12 ng-scope" id="line-chart" ng-controller="line_ctrl">
+    <div class="panel panel-default">
+      <canvas id="line" class="chart chart-line" chart-data="data"
+       chart-labels="labels" chart-series="series" chart-options="options"
+       chart-dataset-override="datasetOverride" chart-click="onClick">
+      </canvas>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
